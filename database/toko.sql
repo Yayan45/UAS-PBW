@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 04, 2025 at 01:47 PM
+-- Generation Time: Jan 07, 2025 at 04:27 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -49,9 +49,18 @@ CREATE TABLE `barang` (
 CREATE TABLE `user` (
   `id` int NOT NULL,
   `username` varchar(255) NOT NULL,
-  `email` int NOT NULL,
-  `password` int NOT NULL
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `email`, `password`) VALUES
+(1, 'Hafizh', 'hafizh@gmail.com', '$2y$10$uRVEyt9UQnoCYV5c4xVyQu2Xl7.zR/NZYLkn95BPqYE/tk1Au7WPm'),
+(2, 'Yayan', 'yayan@gmail.com', '$2y$10$uRVEyt9UQnoCYV5c4xVyQu2Xl7.zR/NZYLkn95BPqYE/tk1Au7WPm'),
+(3, 'Hadi', 'hadi@gmail.com', '$2y$10$uRVEyt9UQnoCYV5c4xVyQu2Xl7.zR/NZYLkn95BPqYE/tk1Au7WPm');
 
 --
 -- Indexes for dumped tables
@@ -83,7 +92,7 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

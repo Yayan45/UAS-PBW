@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(isset($_SESSION['isLoggedIn']))
+{
+if ($_SESSION['isLoggedIn']) 
+{
+    header("location: homepage.php");
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +18,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="row">
+    <div class="row w-100 h-100">
         <div class="container d-flex justify-content-center align-items-center vh-100">
             <div class="card shadow p-4">
                 <h3 class="text-center mb-4">Login</h3>
-            <form>
+            <form action="aksi_login.php" method="post">
                     <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input type="email" name="email" class="form-control" aria-describedby="emailHelp">
