@@ -37,6 +37,7 @@ if ($dbh->rowCount() == 1) {
         </div>
         <input type="hidden" name="id" value="<?php echo $id; ?>"> <!-- Tambahkan input hidden untuk ID -->
         <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="datapenulis.php" class="btn btn-danger">Kembali</a>
     </form>
 <?php
 } else {

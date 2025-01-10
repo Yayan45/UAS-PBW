@@ -57,6 +57,7 @@ include "koneksi.php";
 
         ?>
         <div class="row">
+            <h1>Data Penulis</h1>
             <table class="table table-bordered" border="1">
                 <thead>
                     <tr class="table-success">

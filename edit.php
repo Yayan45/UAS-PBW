@@ -17,7 +17,7 @@ if ($dbh->rowCount() == 1) {
   $data = $dbh->fetch(PDO::FETCH_ASSOC);
 ?>
   <form method="POST" action="aksiedit.php" class="container" autocomplete="off">
-    <h1 class="mt-5">Masukan Data Buku</h1>
+    <h1 class="mt-5">Edit Data Buku</h1>
     <div class="form-group">
       <label for="judul">Judul</label>
       <input type="text" class="form-control" id="judul" name="judul" value="<?php echo $data['judul'] ?>">
@@ -28,6 +28,7 @@ if ($dbh->rowCount() == 1) {
     </div>
     <input type="hidden" name="id" value="<?php echo $id; ?>"> <!-- Tambahkan input hidden untuk ID -->
     <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="homepage.php" class="btn btn-danger">kembali</a>
   </form>
 <?php
 } else {

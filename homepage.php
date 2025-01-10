@@ -46,6 +46,7 @@ include "koneksi.php";
     </header>
 
     <div class="container mt-5">
+
         <div class="text-end waktu">
             <h5 class="center">
                 <span id="tanggal"></span> <br>
@@ -57,6 +58,7 @@ include "koneksi.php";
 
         ?>
         <div class="row">
+            <h1>Data Buku Perpustakaan</h1>
             <table class="table table-bordered" border="1">
                 <thead>
                     <tr class="table-success">
@@ -116,7 +118,7 @@ include "koneksi.php";
                 waktu.getSeconds();
         }
     </script>
-    <!-- <script>
+    <script>
         $(document).ready(function() {
 
             var username = "<?php echo $_SESSION['username']; ?>";
@@ -124,7 +126,7 @@ include "koneksi.php";
 
             alert('Selamat Datang ' + username + '');
         });
-    </script> -->
+    </script>
 </body>
 
 </html>

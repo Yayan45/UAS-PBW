@@ -16,8 +16,8 @@ if ($dbh->rowcount() == 1) {
         $_SESSION['isLoggedIn'] = true;
         header("location: homepage.php");
     } else {
-        echo "Periksa email dan Password";
+        echo "<script>alert('Periksa email dan password Anda'); window.location.href='login.php';</script>";
     }
 } else {
-    echo "User tidak ditemukan";
+    echo "<script>alert('User tidak ditemukan'); window.location.href='login.php';</script>";
 }
