@@ -50,7 +50,7 @@ include "koneksi.php";
         <a href="input.php" class="btn btn-success mb-3">Tambah Data</a>
         <a href="logout.php"> <button class="btn btn-danger mb-3">keluar</button></a>
         <?php
-        $dbh = $koneksi->query("SELECT * FROM buku Where isdel = 0");
+        $dbh = $koneksi->query("SELECT id_buku, judul, tahun, penulis FROM buku NATURAL JOIN penulis WHERE buku.isdel = 0");
 
         ?>
         <div class="row">
@@ -60,6 +60,7 @@ include "koneksi.php";
                         <th scope="col">No</th>
                         <th scope="col">Judul</th>
                         <th scope="col">Tahun Terbit</th>
+                        <th scope="col">Penulis</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -72,6 +73,7 @@ include "koneksi.php";
                             <th scope="row"><?php echo $no ?></th>
                             <td><?php echo $bukus['judul'] ?></td>
                             <td><?php echo $bukus['tahun'] ?></td>
+                            <td><?php echo $bukus['penulis'] ?></td>
                             <td>
                                 <!-- <a class="btn btn-primary" href="edit.php?id=<?php echo $bukus['id'] ?>">Edit</a>
                                 <a class="btn btn-danger" href="delete.php?id=<?php echo $bukus['id'] ?>">Hapus</a> -->
