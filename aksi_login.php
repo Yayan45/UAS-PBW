@@ -1,29 +1,23 @@
 <?php
-    include "koneksi.php";
+include "koneksi.php";
 
-    $mail = $_POST['email'];
-    $pass = $_POST['password'];
+$mail = $_POST['email'];
+$pass = $_POST['password'];
 
-    $dbh = $koneksi->query("select * from user where email = '".$mail."'");
+$dbh = $koneksi->query("select * from user where email = '" . $mail . "'");
 
-        if($dbh->rowcount()==1)
-        {
-            $user = $dbh->fetch(PDO::FETCH_ASSOC);
+if ($dbh->rowcount() == 1) {
+    $user = $dbh->fetch(PDO::FETCH_ASSOC);
 
-            if(password_verify($pass,$user['password']))
-            {
-                session_start();
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['userid'] = $user['id'];
-                $_SESSION['isLoggedIn']=true;
-                header("location: homepage.php");
-            }
-            else
-            {
-                echo "Periksa email dan Password"; 
-            }
-        }
-        else
-         {
-            echo "User tidak ditemukan";
-        }
+    if (password_verify($pass, $user['password'])) {
+        session_start();
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['userid'] = $user['id'];
+        $_SESSION['isLoggedIn'] = true;
+        header("location: homepage.php");
+    } else {
+        echo "Periksa email dan Password";
+    }
+} else {
+    echo "User tidak ditemukan";
+}
