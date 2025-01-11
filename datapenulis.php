@@ -53,7 +53,7 @@ include "koneksi.php";
             </h5>
         </div>
         <?php
-        $dbh = $koneksi->query("SELECT id_penulis, penulis, tgl_lahir, negara, gendre FROM penulis NATURAL JOIN buku WHERE buku.isdel = 0");
+        $dbh = $koneksi->query("SELECT id_penulis, penulis, tgl_lahir, negara,judul, gendre FROM penulis NATURAL JOIN buku");
 
         ?>
         <div class="row">
@@ -65,6 +65,7 @@ include "koneksi.php";
                         <th scope="col">Nama Penulis</th>
                         <th scope="col">Tanggal Lahir</th>
                         <th scope="col">Negara</th>
+                        <th scope="col">Judul Buku</th>
                         <th scope="col">Gendre</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -79,10 +80,11 @@ include "koneksi.php";
                             <td><?php echo $bukus['penulis'] ?></td>
                             <td><?php echo $bukus['tgl_lahir'] ?></td>
                             <td><?php echo $bukus['negara'] ?></td>
+                            <td><?php echo $bukus['judul'] ?></td>
                             <td><?php echo $bukus['gendre'] ?></td>
                             <td>
                                 <a class="btn btn-primary" href="editpenulis.php?id=<?php echo $bukus['id_penulis'] ?>">Edit</a>
-                                <a class="btn btn-danger" href="delete.php?id=<?php echo $bukus['id_penulis'] ?>">Hapus</a>
+                                <a class="btn btn-danger" href="deletepenulis.php?id=<?php echo $bukus['id_penulis'] ?>">Hapus</a>
 
                             </td>
                         </tr>
